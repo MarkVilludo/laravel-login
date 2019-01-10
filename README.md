@@ -174,6 +174,18 @@ Route::group(['middleware' => 'auth:api'], function(){
 
 ```
 
+5. Update users table add 'status' field type Boolean and default as active or value is equal to zero / 0
+
+```
+  $table->boolean('status')->default(1);
+```
+
+6. Make UserResource and update based to your usage, if has existing. Do not recreate and used it.
+
+```
+php artisan make:resource UserResource
+```
+
 ## Usage - login in API
 ```
 
