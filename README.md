@@ -186,6 +186,14 @@ Route::group(['middleware' => 'auth:api'], function(){
 php artisan make:resource UserResource
 ```
 
+7. Publish config login-messages.php but include first the service provider in config app in provider set. Add this line.
+```
+MarkVilludo\LaravelLogin\ServiceProvider::class,
+```
+```
+php artisan vendor:publish --provider="MarkVilludo\LaravelLogin\ServiceProvider" --tag="config"
+```
+
 ## Usage - login in API
 use MarkVilludo\LaravelLogin\Login;
 
