@@ -1,0 +1,30 @@
+{
+    "name": "markvilludo/laravel-login",
+    "description": "Laravel package API and in CMS login.",
+    "keywords": [
+        "laravel",
+        "api",
+        "login",
+        "passport",
+        "cms-login"
+    ],
+    "authors": [
+        {
+            "name": "Mark Villudo"
+        }
+    ],
+    "require": {
+        "php": ">=7.0.0",
+        "mannysoft/api-form-request": "dev-master",
+        "laravel/passport": "4.0.x-dev"
+    },
+    "autoload": {
+        "psr-0": {
+            "MarkVilludo\\LaravelLogin\\": "src/"
+        },
+        "files": [
+            "src/login.php"
+        ]
+    },
+    "minimum-stability": "dev"
+}
