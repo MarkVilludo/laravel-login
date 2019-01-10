@@ -14,10 +14,9 @@ class ServiceProvider extends BaseServiceProvider {
      */
     public function boot()
     {      
-        
-        // $this->mergeConfigFrom(
-        //     __DIR__ . '/../../config/imageUpload.php', 'imageUpload'
-        // );
+        $this->publishes([
+            __DIR__.'/config/login-messages.php' => $this->app->configPath().'/'.'login-messages',
+        ], 'config');
     }
 
     /**
