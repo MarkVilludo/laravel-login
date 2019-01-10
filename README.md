@@ -187,15 +187,25 @@ php artisan make:resource UserResource
 ```
 
 ## Usage - login in API
-```
+use MarkVilludo\LaravelLogin\Login;
 
-  //Get email and password
-  $email = $request->email;
-  $password = $request->password;
-  $projectName = 'My Sample Project'; //used to include in generated token using passport API.
-  
-  //use helper login user
-  LoginHelper::loginApi($pr ojectName, $email, $password);
+```
+    public function __construct(Login $login)
+    {
+      $this->login = $login;
+    }
+
+    public function login(Request $request) 
+    {
+
+      //Get email and password
+      $email = $request->email;
+      $password = $request->password;
+      $projectName = 'My Sample Project'; //used to include in generated token using passport API.
+
+      //use helper login user
+      return $this->login->loginApi($projectName, $email, $password);
+    }
 ```
 
 ## Usage - Login with CMS or expected to return in other views.
