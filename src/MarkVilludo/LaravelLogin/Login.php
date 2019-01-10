@@ -4,7 +4,6 @@ namespace MarkVilludo\LaravelLogin;
 
 use Illuminate\Support\Facades\Auth;
 use App\Http\Resources\UserResource;
-use Laravel\Passport\Passport;
 use Illuminate\Http\Request;
 
 class Login {
