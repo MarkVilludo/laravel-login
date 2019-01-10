@@ -15,16 +15,14 @@
     ],
     "require": {
         "php": ">=7.0.0",
+        "paragonie/random_compat": "2.*",
         "mannysoft/api-form-request": "dev-master",
         "laravel/passport": "4.0.x-dev"
     },
     "autoload": {
         "psr-0": {
             "MarkVilludo\\LaravelLogin\\": "src/"
-        },
-        "files": [
-            "src/login.php"
-        ]
+        }
     },
     "minimum-stability": "dev"
 }
