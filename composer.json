@@ -15,7 +15,6 @@
     ],
     "require": {
         "php": ">=7.0.0",
-        "paragonie/random_compat": "2.*",
         "mannysoft/api-form-request": "dev-master",
         "laravel/passport": "4.0.x-dev"
     },

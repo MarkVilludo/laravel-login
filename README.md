@@ -6,7 +6,12 @@ Laravel package API and in CMS login.
 Require this package with composer.
 
 ```shell
+//Passport requires league/oauth2-server which requires defuse/php-encryption hence the issues.
+//See https://github.com/paragonie/random_compat/issues/147
+
+composer require paragonie/random_compat:2.*
 composer require markvilludo/laravel-login
+
 ```
 
 ##Setup Laravel Passport Configs.
