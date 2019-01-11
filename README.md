@@ -226,16 +226,18 @@ php artisan vendor:publish --provider="MarkVilludo\LaravelLogin\ServiceProvider"
 
 2. Make new route to redirect after success login the correct credentials, and for the initial views for login page.
 
+```
 Route::get('/login', function () {
     return view('login');
 });
 
 Route::post('/login', 'Auth\LoginController@login')->name('web.login');
-
+```
 //Run in terminal `php artisan make:controller Admin/DashboardController --resource` (this is for test only)
 //You may create route based to your needs.
-
+```
 Route::resource('/dashboard','Admin\DashboardController');
+```
 
 3. In Controllers, in Auth\LoginController.php paste this code.
 ```
