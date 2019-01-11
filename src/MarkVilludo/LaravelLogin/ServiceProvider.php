@@ -17,6 +17,11 @@ class ServiceProvider extends BaseServiceProvider {
         $this->publishes([
             __DIR__.'/config/login-messages.php' => $this->app->configPath().'/'.'login-messages',
         ], 'config');
+
+
+       $this->publishes([
+           __DIR__.'/views/login.blade.php' => resource_path('/views'),
+        ],'views');
     }
 
     /**

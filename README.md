@@ -217,13 +217,33 @@ use MarkVilludo\LaravelLogin\Login;
 ```
 
 ## Usage - Login with CMS or expected to return in other views.
+
+1. Publish login view initial page.
+
 ```
-  /Get email and password
-  $email = $request->email;
-  $password = $request->password;
-  $route = 'campaigns.index'; //alias or name in route. ex Route::get('','')->name('campains.index');
-  
-  //use helper login user
-  LoginHelper::loginCMS($email, $password, $route);
+php artisan vendor:publish --provider="MarkVilludo\LaravelLogin\ServiceProvider" --tag="views"
+```
+
+2. Make new route to redirect after success login the correct credentials, and for the initial views for login page.
+
+Route::get('/login', function () {
+    return view('login');
+});
+
+Route::post('/login', 'Auth\LoginController@login')->name('web.login');
+Route::resource('/dashboard','Admin\DashboardController');
+
+3. In Controllers, in Auth\LoginController.php paste this code.
+```
+  public function login(Request $request) 
+  {
+      //Get email and password and passed to function
+      $routeName = 'dashboard.index'; //used for redirect route.
+      //dashboard.index - its auto generated route when you add Route::resource('dashboard'); in routes.  
+      //But depends on you, you can create new route. you just need to pass the route name.
+
+      //use helper login user
+      return $this->login->loginCMS($routeName, $request->email, $request->password);
+  }
   
 ```
