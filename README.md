@@ -10,8 +10,7 @@ Require this package with composer.
 //See https://github.com/paragonie/random_compat/issues/147
 
 composer require paragonie/random_compat:2.*
-composer require markvilludo/laravel-login
-
+composer requiremark-villudo/laravel-login
 ```
 
 ##Setup Laravel Passport Configs.
